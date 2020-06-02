@@ -4,22 +4,23 @@ body {
 
 .container{
     display: grid;
-    /* grid-template-columns: 25% 200px 25%;
-    grid-template-rows: 200px 300px; */
-
-    /* grid-template: filas / columnas; */
-    /*grid-template: 200px 100px 100px/ auto 1fr 1fr; /* usando fr (fracciones) nos sirve para decirle cuantas partes queremos del total, en este caso serian 3 columnas de 3.333% cada una*/
-    
-    /* haciendo uso de repeat(<veces>,<valor a repetir>) podemos hacer uso de funciones dentro de css para quizá hacer la lectura de código un poco mas sencilla*/
-    /* grid-template: 200px 100px 100px/ repeat(3, 1fr);*/
-
-    /* También podemos meter una función dentro de repeat para hacerlo un poco mas responsive friendly, usaremos minmax() para decirle el minimo y maximo valor*/
-    grid-template: 200px 100px 100px/ repeat(3, minmax(200px, 1fr));
-
-    /* grid-column-gap: 10px;
-    grid-row-gap: 10px; */
-    /* grid-gap: 10px 30px; */
+    grid-template: 100px 1fr 150px / 200px 1fr;
     gap: 10px;
+    height: 100vh;
+    grid-template-areas: "header header" "left contenido" "footer footer";
+}
+
+.header {
+    grid-area: header;
+}
+.left {
+    grid-area: left;
+}
+.contenido {
+    grid-area: contenido;
+}
+.footer {
+    grid-area: footer;
 }
 
 .item {
