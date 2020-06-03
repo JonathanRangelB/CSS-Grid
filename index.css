@@ -7,6 +7,11 @@ body {
     grid-template: [inicio] 200px [linea2] 200px [final] / [inicio] 1fr [linea2] 1fr [linea3] 1fr [destacado-end] 1fr [linea5] 1fr [destacado2-end] 1fr [linea7] 1fr [final];
     gap: 5px;
     height: 100vh;
+
+    /* lo que sigue es para manejar de manera implicita los elementos extras no manejados explicitamente */
+    /* grid-auto-flow: column; por defecto al iniciar grid tiene este atributo y con valor row, pero lo podemos modificar a column, cualquier elemento extra no contemplado será desplazado en filas por defecto, o podemos cambiarlo a rows */
+    /* grid-auto-columns: 50px 100px; funciona para que sigan un patrón todos los elementos que no se manejen directamente, una columna de 50, luego una de 100, luego 500 y asi hasta el infinito*/
+    /* grid-auto-rows: 50px 100px; exactamente igual que el anterior pero para filas, seguira en este caso el patrón 50 100 50 100 ... hasta el infinito dependiendo de los elementos que existan*/
 }
 
 
