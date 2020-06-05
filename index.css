@@ -1,6 +1,6 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(auto-fill,250px);
+    grid-template-columns: repeat(auto-fill, 250px);
     gap: 5px;
     justify-content: center;
 }
@@ -11,7 +11,7 @@
     background: #f2f2f2;
 }
 
-.item img{
+.item > img{
     max-width: 100%;
 }
 
