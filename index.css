@@ -1,37 +1,57 @@
-body {
+body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
+.post-list{
     display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-template-rows: repeat(4, 100px);
-    gap: 5px;
-    height: 100vh;
-    align-content: center;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
     justify-content: center;
-
-    /* justify-items: start end center stretch; son los valores posibles*/
-    /* justify-items: center; */
-    /* align-items: start end center stretch; son los valores posibles*/
-    /* align-items: center; */
-
-    /* lo que sigue es para manejar de manera implicita los elementos extras no manejados explicitamente */
-    /* grid-auto-flow: column; por defecto al iniciar grid tiene este atributo y con valor row, pero lo podemos modificar a column, cualquier elemento extra no contemplado será desplazado en filas por defecto, o podemos cambiarlo a rows */
-    /* grid-auto-columns: 50px 100px; funciona para que sigan un patrón todos los elementos que no se manejen directamente, una columna de 50, luego una de 100, luego 500 y asi hasta el infinito*/
-    /* grid-auto-rows: 50px 100px; exactamente igual que el anterior pero para filas, seguira en este caso el patrón 50 100 50 100 ... hasta el infinito dependiendo de los elementos que existan*/
+    gap: 28px;
 }
 
-
-.item {
-    background-color: lightblue;
-    padding: 10px;
-    border: 1px solid red;
-    /* margin-right: 10px;
-    margin-bottom: 10px; */
+.post{
+    cursor: pointer;
+    position: relative;
 }
 
-.item:nth-of-type(5){
-    /* align-self: start;
-    justify-self: start; */
+.post-image{
+    margin: 0;
+}
+
+.post-image img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.post-overlay{
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.post:hover .post-overlay{
+    display: flex;
+}
+
+.post-likes,
+.post-comments{
+    width: 70px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px){
+    .post-list{
+        gap: 3px;
+    }
 }
