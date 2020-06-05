@@ -4,15 +4,17 @@ body {
 
 .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(4, 100px);
     gap: 5px;
     height: 100vh;
+    align-content: center;
+    justify-content: center;
 
     /* justify-items: start end center stretch; son los valores posibles*/
-    justify-items: center;
+    /* justify-items: center; */
     /* align-items: start end center stretch; son los valores posibles*/
-    align-items: center;
+    /* align-items: center; */
 
     /* lo que sigue es para manejar de manera implicita los elementos extras no manejados explicitamente */
     /* grid-auto-flow: column; por defecto al iniciar grid tiene este atributo y con valor row, pero lo podemos modificar a column, cualquier elemento extra no contemplado será desplazado en filas por defecto, o podemos cambiarlo a rows */
@@ -30,6 +32,6 @@ body {
 }
 
 .item:nth-of-type(5){
-    align-self: start;
-    justify-self: start;
+    /* align-self: start;
+    justify-self: start; */
 }
